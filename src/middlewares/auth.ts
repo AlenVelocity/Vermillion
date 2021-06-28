@@ -6,10 +6,10 @@ const auth = async (req: Request, res: Response, next: NextFunction): Promise<vo
     try {
         const token = req.header('Authorization')
         if (!token) return void res.status(400).json({ msg: 'Invalid Authentication.' })
-        const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
+        const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET as string)
         if (!decoded) return void res.status(400).json({ msg: 'Invalid Authentication.' })
-        const user = await UserModel.findOne({ _id: decoded.id })
-        ;(req as unknown as { user }).user = user
+        const user = await UserModel.findOne({ _id: (typeof decoded !== 'string') ? decoded?.id :'' })
+        ;(req as unknown as { user: unknown }).user = user
         next()
     } catch (err) {
         return void res.status(500).json({ msg: (err as Error).message })

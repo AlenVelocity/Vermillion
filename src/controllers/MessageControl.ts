@@ -4,7 +4,7 @@ import MessagesModel from '../Models/MessageModel'
 import { Request, Response } from 'express'
 import APIfeatures from './APIFeatures'
 
-class messageCtrl {
+class MessageControl {
     createMessage = async (req: Request, res: Response): Promise<void> => {
         try {
             const { sender, recipient, text, media, call } = req.body
@@ -108,4 +108,4 @@ class messageCtrl {
     }
 }
 
-module.exports = messageCtrl
+export default MessageControl

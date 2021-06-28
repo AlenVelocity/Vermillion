@@ -3,19 +3,7 @@ import PostsModel from '../Models/PostModel'
 import CommentModel from '../Models/CommentModel'
 import UserModel from '../Models/UserModel'
 import { Request, Response } from 'express'
-
-class APIfeatures {
-    constructor(public query: any, public queryString: Request['query']) {}
-
-    paginating() {
-        const page = ((this?.queryString?.page as unknown as number) || 1) * 1 || 1
-        const limit = ((this?.queryString?.limit as unknown as number) || 1) * 1 || 9
-        const skip = (page - 1) * limit
-        this.query = this.query.skip(skip).limit(limit)
-        return this
-    }
-}
-
+import APIfeatures from './APIFeatures'
 class PostControl {
     createPost = async (req: Request, res: Response): Promise<void> => {
         try {

@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import AuthCtrl from '../controllers/AuthControl'
+import AuthControl from '../controllers/AuthControl'
 
 const router = Router()
-const authCtrl = new AuthCtrl()
+const authCtrl = new AuthControl()
 
 router.post('/register', authCtrl.register)
 

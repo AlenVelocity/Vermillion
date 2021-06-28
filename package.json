@@ -1,0 +1,43 @@
+{
+  "name": "vermillion",
+  "version": "1.0.0",
+  "description": "Instagram Clone. I guess",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "node tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlenSaito1/Vermillion-Server.git"
+  },
+  "keywords": [
+    "instagram",
+    "mongodb",
+    "express",
+    "REST"
+  ],
+  "author": "Alen Yohannan",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/AlenSaito1/Vermillion-Server/issues"
+  },
+  "homepage": "https://github.com/AlenSaito1/Vermillion-Server#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.15"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.5",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.4"
+  }
+}

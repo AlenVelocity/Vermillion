@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { IPostModel } from '../typings/Post'
 
 const postSchema = new mongoose.Schema(
     {
@@ -16,4 +17,4 @@ const postSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('post', postSchema)
+export default mongoose.model<IPostModel>('post', postSchema)

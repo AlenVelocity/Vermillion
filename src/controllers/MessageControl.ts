@@ -99,7 +99,7 @@ class MessageControl {
                     { recipients: [req.params.id, (req as any)._id] }
                 ]
             })
-            await MessagesModel.deleteMany({ conversation: newConver._id })
+            await MessagesModel.deleteMany({ conversation: newConver?._id || '' })
 
             res.json({ msg: 'Delete Success!' })
         } catch (err) {

@@ -81,7 +81,7 @@ class PostControl {
             res.json({
                 msg: 'Updated Post!',
                 newPost: {
-                    ...post._doc,
+                    ...post?._doc,
                     content,
                     images
                 }
@@ -184,7 +184,7 @@ class PostControl {
     deletePost = async (req: Request, res: Response): Promise<void> => {
         try {
             const post = await PostsModel.findOneAndDelete({ _id: req.params.id, user: (req as any).user._id })
-            await CommentModel.deleteMany({ _id: { $in: post.comments } })
+            await CommentModel.deleteMany({ _id: { $in: post?.comments || '' } })
 
             res.json({
                 msg: 'Deleted Post!',

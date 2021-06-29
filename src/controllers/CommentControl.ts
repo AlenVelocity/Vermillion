@@ -98,7 +98,7 @@ class CommentControl {
             })
 
             await PostsModel.findOneAndUpdate(
-                { _id: comment.postId },
+                { _id: comment?.postId || '' },
                 {
                     $pull: { CommentsModel: req.params.id }
                 }

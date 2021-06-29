@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { IUserModel } from '../typings/User'
 
 const userSchema = new mongoose.Schema(
     {
@@ -48,4 +49,4 @@ const userSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('user', userSchema)
+export default mongoose.model<IUserModel>('user', userSchema)

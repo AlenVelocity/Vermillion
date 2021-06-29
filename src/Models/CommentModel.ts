@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { ICommentModel } from '../typings/Comment'
 
 const commentSchema = new mongoose.Schema(
     {
@@ -18,4 +19,4 @@ const commentSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('comment', commentSchema)
+export default mongoose.model<ICommentModel>('comment', commentSchema)

@@ -6,7 +6,7 @@ import UserModel from '../Models/UserModel'
 class UserControl {
     searchUser = async (req: Request, res: Response): Promise<void> => {
         try {
-            const users = await UserModel.find({ username: { $regex: req.query.username } })
+            const users = await UserModel.find({ username: { $regex: req.query.username as string } })
                 .limit(10)
                 .select('fullname username avatar')
 

@@ -29,7 +29,7 @@ class NotifyControl {
         try {
             const notify = await NotifyModel.findOneAndDelete({
                 id: req.params.id,
-                url: req.query.url
+                url: req.query.url as string
             })
 
             return void res.json({ notify })

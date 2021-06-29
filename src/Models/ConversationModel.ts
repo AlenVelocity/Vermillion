@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { IConversationModel } from '../typings/Conversation'
 
 const conversationSchema = new mongoose.Schema(
     {
@@ -12,4 +13,4 @@ const conversationSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('conversation', conversationSchema)
+export default mongoose.model<IConversationModel>('conversation', conversationSchema)

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { INotify } from '../typings/Notify'
 
 const notifySchema = new mongoose.Schema(
     {
@@ -16,4 +17,4 @@ const notifySchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('notify', notifySchema)
+export default mongoose.model<INotify>('notify', notifySchema)

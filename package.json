@@ -32,7 +32,8 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.15",
-    "peer": "^0.6.1"
+    "peer": "^0.6.1",
+    "socket.io": "^4.1.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

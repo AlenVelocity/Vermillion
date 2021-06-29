@@ -4,7 +4,13 @@
   "description": "Instagram Clone. I guess",
   "main": "dist/index.js",
   "scripts": {
+    "start": "node dist/server.js",
+    "client": "cd client && npm start",
+    "build": "tsc -p .",
+    "build-client": "cd client && npm run build",
     "test": "node tests",
+    "heroku-postbuild": "npm run build-client",
+    "postinstall": "npm run build",
     "prettier-format": "prettier --config .prettierrc \"src/**/*.ts\" --write"
   },
   "repository": {

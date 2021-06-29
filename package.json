@@ -4,13 +4,12 @@
   "description": "Instagram Clone. I guess",
   "main": "dist/index.js",
   "scripts": {
-    "start": "NODE_ENV=production node dist/server.js",
+    "start": "node dist/server.js",
     "client": "cd client && npm start",
     "build": "tsc -p .",
     "build-client": "cd client && npm run build",
     "test": "node tests",
-    "postbuild": "NODE_ENV=development git clone https://github.com/AlenSaito1/Vermillion-Client.git client && cd client && npm i && npm run build",
-    "postinstall": "npm run build",
+    "postbuild": "git clone https://github.com/AlenSaito1/Vermillion-Client.git client && cd client && npm i && npm run build",
     "prettier-format": "prettier --config .prettierrc \"src/**/*.ts\" --write"
   },
   "repository": {

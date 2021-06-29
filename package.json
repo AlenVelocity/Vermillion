@@ -9,7 +9,7 @@
     "build": "tsc -p .",
     "build-client": "cd client && npm run build",
     "test": "node tests",
-    "heroku-postbuild": "git clone https://github.com/AlenSaito1/Vermillion-Client.git client && cd client && npm ci && npm run build",
+    "heroku-postbuild": "git clone https://github.com/AlenSaito1/Vermillion-Client.git client && cd client && npm i -D && npm run build",
     "postinstall": "npm run build",
     "prettier-format": "prettier --config .prettierrc \"src/**/*.ts\" --write"
   },

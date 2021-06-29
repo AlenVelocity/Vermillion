@@ -12,9 +12,11 @@ export interface IUser {
     address: string
     story: string
     website: string
-    followers: string[]
-    following: string[]
+    followers: { _id: string }[]
+    following: { _id: string }[]
     saved: string[]
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    _doc: any
 }
 
 export interface IUserModel extends IUser, Document {}

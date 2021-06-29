@@ -9,7 +9,7 @@
     "build": "tsc -p .",
     "build-client": "cd client && npm run build",
     "test": "node tests",
-    "heroku-postbuild": "cd client && npm i && npm run build",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "postinstall": "npm run build",
     "prettier-format": "prettier --config .prettierrc \"src/**/*.ts\" --write"
   },

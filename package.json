@@ -4,7 +4,7 @@
   "description": "Instagram Clone. I guess",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "NODE_ENV=production node dist/server.js",
     "client": "cd client && npm start",
     "build": "tsc -p .",
     "build-client": "cd client && npm run build",

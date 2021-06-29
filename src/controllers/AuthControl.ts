@@ -10,7 +10,7 @@ class AuthControl {
             const newUserName = username.toLowerCase().replace(/ /g, '')
 
             const user_name = await UserModel.findOne({ username: newUserName })
-            if (user_name) return void res.status(400).json({ msg: 'This user name already exists.' })
+            if (user_name) return void res.status(400).json({ msg: 'This username already exists.' })
 
             const user_email = await UserModel.findOne({ email })
             if (user_email) return void res.status(400).json({ msg: 'This email already exists.' })
@@ -61,7 +61,7 @@ class AuthControl {
                 'avatar username fullname followers following'
             )
 
-            if (!user) return void res.status(400).json({ msg: 'This email does not exist.' })
+            if (!user) return void res.status(400).json({ msg: 'This email does not exist. Please Register' })
 
             const isMatch = await bcrypt.compare(password, user.password)
             if (!isMatch) return void res.status(400).json({ msg: 'Password is incorrect.' })
